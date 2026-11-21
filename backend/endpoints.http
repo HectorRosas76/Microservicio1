@@ -1,2 +1,33 @@
 ### Hello word
 get http://127.0.0.1:8000/
+
+### Consultar todos los clientes
+get http://127.0.0.1:8081/clientes
+
+### Consultar un cliente
+get http://127.0.0.1:8081/clientes/1
+
+### registrar un cliente
+POST http://127.0.0.1:8081/clientes
+Content-Type: application/json
+
+{
+    "nombre": "John Doe",
+    "telefono": "1234567890",
+        "correo": "john.doe@test.com",
+        "numero_licencia": "ABC123456"
+}
+
+### modificar un cliente
+PUT http://127.0.0.1:8081/clientes/1
+Content-Type: application/json
+
+{
+    "nombre": "John Doe",
+    "telefono": "34567890",
+        "correo": "john.moe@test.com",
+        "numero_licencia": "ABC123436"
+}
+
+### borrar un cliente
+DELETE http://127.0.0.1:8081/clientes/1

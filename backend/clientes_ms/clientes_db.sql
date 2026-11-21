@@ -1,0 +1,13 @@
+-- Base de datos de clientes_ms
+CREATE DATABASE IF NOT EXISTS clientes_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE clientes_db;
+
+CREATE TABLE IF NOT EXISTS clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(150) NOT NULL,
+    telefono VARCHAR(50),
+    correo VARCHAR(100),
+    numero_licencia VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
