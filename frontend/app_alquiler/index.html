@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudiantes</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/msg.css">
+  </head>
+  <body>
+    <h1>Lista de estudiantes</h1>
+    <br />
+    <button id="registro-btn">Registrar estudiante</button>
+    <br />
+    <table id="estudiantes-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4">No hay datos registrados...</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="student-form-content" class="form-content close">
+      <form name="estudiante-form">
+        <h3>Datos del estudiante</h3>
+        <div>
+          <label for="cod">Codigo:</label>
+          <input type="text" name="cod" />
+        </div>
+        <div>
+          <label for="name">Nombre.</label>
+          <input type="text" name="name" />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" />
+        </div>
+        <div class="btns">
+          <button type="reset">Cancelar</button>
+          <button type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+    <div id="borrar-modal" class="modal close">
+        <div class="content">
+            <h4>¿Desea borrar el registro?</h4>
+            <div>
+                <button id="cancelar-modal-btn">Cancelar</button>
+                <button id="borrar-modal-btn">Borrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="msg-content" class="msg hidden">
+        <p>Datos guardados!!!</p>
+    </div>
+
+    <script src="js/components/estudiantes_components.js"></script>
+    <script src="js/services/estudiantes_services.js"></script>
+    <script src="js/estudiantes.js"></script>
+  </body>
+</html>
