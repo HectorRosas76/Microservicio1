@@ -8,7 +8,7 @@ require __DIR__ . '/../app/Base/database.php';
 
 $app = AppFactory::create();
 
-$vehicles_endpoints = require __DIR__ . '/../app/Presentation/Routers/endpoints.php';
+$reservations_endpoints = require __DIR__ . '/../app/Presentation/Routers/endpoints.php';
 
 $cors = require __DIR__ . '/../app/Base/cors.php';
 
@@ -21,6 +21,6 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-$vehicles_endpoints($app);
+$reservations_endpoints($app);
 
 $app->run();

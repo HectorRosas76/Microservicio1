@@ -2,25 +2,25 @@
 
 namespace App\Controllers;
 
-use App\Models\Vehiculos;
+use App\Models\Reservas;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 
-class VehiclesController
+class ReservationsController
 {
     function all(): Collection
     {
-        return Vehiculos::all();
+        return Reservas::all();
     }
 
-    function find_vehicle_by_id(int $id): Vehiculos|null
+    function find_reservation_by_id(int $id): Reservas|null
     {
-        return Vehiculos::find($id);
+        return Reservas::find($id);
     }
 
-    function create(array $data): Vehiculos
+    function create(array $data): Reservas
     {
-        $vehicle = new Vehiculos();
+        $vehicle = new Reservas();
         $vehicle->marca = $data['marca'];
         $vehicle->modelo = $data['modelo'];
         $vehicle->anio = $data['anio'];
@@ -30,9 +30,9 @@ class VehiclesController
         return $vehicle;
     }
 
-    function update(int $id, array $data): Vehiculos|null
+    function update(int $id, array $data): Reservas|null
     {
-        $vehicle = Vehiculos::find($id);
+        $vehicle = Reservas::find($id);
         if (empty($vehicle)) {
             throw new Exception("$id no existe", 1);
         }
@@ -45,9 +45,9 @@ class VehiclesController
         return $vehicle;
     }
 
-    function delete(int $id): Vehiculos|null
+    function delete(int $id): Reservas|null
     {
-        $vehicle = Vehiculos::find($id);
+        $vehicle = Reservas::find($id);
         if (empty($vehicle)) {
             throw new Exception("$id no existe", 1);
         }

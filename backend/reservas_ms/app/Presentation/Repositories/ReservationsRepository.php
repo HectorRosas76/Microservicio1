@@ -2,16 +2,16 @@
 
 namespace App\Presentation\Repositories;
 
-use App\Controllers\VehiclesController;
+use App\Controllers\ReservationsController;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class VehiclesRepository
+class ReservationsRepository
 {
 
-    function get_all_vehicles(Request $req, Response $resp, $args): Response
+    function get_all_reservations(Request $req, Response $resp, $args): Response
     {
-        $controller = new VehiclesController();
+        $controller = new ReservationsController();
         $rows = $controller->all();
         if (count($rows) == 0) {
             return $resp->withStatus(204);
@@ -23,11 +23,11 @@ class VehiclesRepository
         }
     }
 
-    function get_vehicle(Request $req, Response $resp, $args): Response
+    function get_reservation(Request $req, Response $resp, $args): Response
     {
         $id = $args["id"];
-        $controller = new VehiclesController();
-        $row = $controller->find_vehicle_by_id($id);
+        $controller = new ReservationsController();
+        $row = $controller->find_reservation_by_id($id);
         if (empty($row)) {
             return $resp->withStatus(404);
         } else {
@@ -38,9 +38,9 @@ class VehiclesRepository
         }
     }
 
-    function create_vehicle(Request $req, Response $resp, $args): Response
+    function create_reservation(Request $req, Response $resp, $args): Response
     {
-        $controller = new VehiclesController();
+        $controller = new ReservationsController();
         $body = $req->getBody()->getContents();
         $data = json_decode($body, true);
         $row = $controller->create($data);
@@ -54,12 +54,12 @@ class VehiclesRepository
         }
     }
 
-    function update_vehicle(Request $req, Response $resp, $args): Response
+    function update_reservation(Request $req, Response $resp, $args): Response
     {
         $id = $args["id"];
         $body = $req->getBody()->getContents();
         $data = json_decode($body, true);
-        $controller = new VehiclesController();
+        $controller = new ReservationsController();
         $row = $controller->update($id, $data);
         if (empty($row)) {
             return $resp->withStatus(400);
@@ -71,10 +71,10 @@ class VehiclesRepository
         }
     }
 
-    function delete_vehicle(Request $req, Response $resp, $args): Response
+    function delete_reservation(Request $req, Response $resp, $args): Response
     {
         $id = $args["id"];
-        $controller = new VehiclesController();
+        $controller = new ReservationsController();
         $row = $controller->delete($id);
         if (empty($row)) {
             return $resp->withStatus(400);

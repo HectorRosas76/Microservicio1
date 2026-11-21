@@ -1,6 +1,6 @@
 <?php
 
-use App\Presentation\Repositories\VehiclesRepository;
+use App\Presentation\Repositories\ReservationsRepository;
 // use Psr\Http\Message\ResponseInterface as Response;
 // use Psr\Http\Message\ServerRequestInterface as Request;
 
@@ -9,11 +9,11 @@ use Slim\Routing\RouteCollectorProxy;
 
 return function (App $app) {
 
-    $app->group('/vehiculos', function (RouteCollectorProxy $group) {
-        $group->get('', [VehiclesRepository::class, 'get_all_vehicles']);
-        $group->get('/{id}', [VehiclesRepository::class, 'get_vehicle']);
-        $group->post('', [VehiclesRepository::class, 'create_vehicle']);
-        $group->put('/{id}', [VehiclesRepository::class, 'update_vehicle']);
-        $group->delete('/{id}', [VehiclesRepository::class, 'delete_vehicle']);
+    $app->group('/reservas', function (RouteCollectorProxy $group) {
+        $group->get('', [ReservationsRepository::class, 'get_all_reservations']);
+        $group->get('/{id}', [ReservationsRepository::class, 'get_reservation']);
+        $group->post('', [ReservationsRepository::class, 'create_reservation']);
+        $group->put('/{id}', [ReservationsRepository::class, 'update_reservation']);
+        $group->delete('/{id}', [ReservationsRepository::class, 'delete_reservation']);
     });
 };
