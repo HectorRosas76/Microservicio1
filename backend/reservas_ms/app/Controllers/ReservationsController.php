@@ -38,8 +38,7 @@ class ReservationsController
     {
         return Reservas::find($id);
     }
-
-    /** MÉTODO 1: realizar una reserva para un periodo. */
+ 
     function create(array $data): Reservas
     {
         $this->validate($data);
@@ -125,10 +124,9 @@ class ReservationsController
         });
     }
 
-    // ==================================================================
-    // MÉTODO 2: devolución de un vehículo
-    // ==================================================================
-
+ 
+    // devolución de un vehículo
+   
     function return_vehicle(int $id): Reservas
     {
         $reserva = Reservas::find($id);
@@ -148,9 +146,9 @@ class ReservationsController
         });
     }
 
-    // ==================================================================
-    // MÉTODO 3: historial por cliente o por vehículo
-    // ==================================================================
+   
+    // historial por cliente o por vehículo
+    
 
     function history_by_client(int $clienteId): array
     {
@@ -164,9 +162,9 @@ class ReservationsController
         return $this->enrich($rows);
     }
 
-    // ==================================================================
-    // MÉTODO 4: vehículos disponibles en una fecha o periodo
-    // ==================================================================
+  
+    // vehículos disponibles en una fecha o periodo
+
 
     function available_vehicles(?string $desde, ?string $hasta): array
     {
@@ -197,11 +195,10 @@ class ReservationsController
         return ['desde' => $desde, 'hasta' => $hasta, 'vehiculos' => $disponibles];
     }
 
-    // ==================================================================
-    // Auxiliares
-    // ==================================================================
+   
+    // Auxiliares 
 
-    /** Reservas activas del vehículo que se cruzan con [inicio, fin]. */
+    /* Reservas activas del vehículo que se cruzan con [inicio, fin]. */
     private function overlap_query(int $vehiculoId, string $inicio, string $fin, ?int $excluirId = null): Builder
     {
         $q = Reservas::where('vehiculo_id', $vehiculoId)
@@ -227,10 +224,7 @@ class ReservationsController
         return $vehiculo;
     }
 
-    /**
-     * Cambia el estado de un vehículo en vehiculos_ms (usa su GET y su PUT, que ya existen).
-     * Si $soloSi viene, solo cambia cuando el estado actual es ese.
-     * Devuelve false si el vehículo ya no existe.
+    /*Cambia el estado de un vehículo en vehiculos_ms (usa su GET y su PUT, que ya existen).
      */
     private function set_vehicle_state(int $id, string $estado, ?string $soloSi = null): bool
     {

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disponibilidad</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/cre_hist.css">
+  </head>
+  <body>
+  <nav class="menu">
+    <div class="menu-item logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="vehiculos.html">
+        Vehículos
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="clientes.html">
+        Clientes
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="reservas.html">
+        Reservas
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="disponibilidad.html">
+        Disponibilidad
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="historial.html">
+        Historial
+      </a>
+    </div>
+  </nav>
+
+    <div class="page-container">
+      <section class="header-section">
+        <h1>Disponibilidad</h1>
+      </section>
+
+      <section class="filter-panel">
+        <div class="filter-box wide">
+          <h2>¿Qué vehículos están libres?</h2>
+          <form name="disponibilidad-form">
+            <div>
+              <label for="desde">Desde</label>
+              <input type="date" name="desde" id="desde" required />
+            </div>
+            <div>
+              <label for="hasta">Hasta</label>
+              <input type="date" name="hasta" id="hasta" />
+            </div>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+          </form>
+          <p class="filter-hint">Se muestran los vehículos que no están en mantenimiento ni tienen una reserva activa que se cruce con esas fechas.</p>
+        </div>
+      </section>
+
+      <div id="disponibles-error" class="alert alert-error" hidden></div>
+
+      <section id="disponibles-panel" class="grid-panel" hidden>
+        <h2 id="disponibles-titulo">Vehículos disponibles</h2>
+        <div id="disponibles-grid" class="grid-wrapper">
+          <div class="grid-row cols-avail grid-head">
+            <div class="grid-cell">Código</div>
+            <div class="grid-cell">Marca</div>
+            <div class="grid-cell">Modelo</div>
+            <div class="grid-cell">Año</div>
+            <div class="grid-cell">Categoría</div>
+            <div class="grid-cell">Acción</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/components/base_components.js"></script>
+    <script src="js/components/disponibilidad_components.js"></script>
+    <script src="js/services/base_services.js"></script>
+    <script src="js/services/reservas_services.js"></script>
+    <script src="js/disponibilidad.js"></script>
+  </body>
+</html>

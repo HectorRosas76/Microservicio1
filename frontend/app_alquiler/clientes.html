@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/cre_hist.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/msg.css">
+  </head>
+  <body>
+  <nav class="menu">
+    <div class="menu-item logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="vehiculos.html">
+        Vehículos
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="clientes.html">
+        Clientes
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="reservas.html">
+        Reservas
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="disponibilidad.html">
+        Disponibilidad
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="historial.html">
+        Historial
+      </a>
+    </div>
+  </nav>
+
+    <div class="page-container">
+      <section class="header-section">
+        <h1>Clientes</h1>
+        <button id="registro-btn" class="btn btn-primary">+ Registrar Cliente</button>
+      </section>
+
+      <section class="list-controls">
+        <h2>Buscar cliente</h2>
+        <form name="search-form" class="search-form">
+          <input type="text" name="search" placeholder="Buscar por nombre, teléfono, email o licencia..." />
+          <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+      </section>
+
+      <section class="grid-panel">
+        <h2>Lista de Clientes</h2>
+        <div id="clientes-grid" class="grid-wrapper">
+          <div class="grid-row cols-6 grid-head">
+          <div class="grid-cell">Código</div>
+          <div class="grid-cell">Nombre</div>
+          <div class="grid-cell">Telefono</div>
+          <div class="grid-cell">Email</div>
+          <div class="grid-cell">N° Licencia</div>
+          <div class="grid-cell">Acciones</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="client-form-content" class="form-content close">
+      <form name="cliente-form">
+        <h3 id="form-title">Registrar</h3>
+        <p class="form-sub">Datos de contacto y licencia del cliente.</p>
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" required />
+        </div>
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="text" name="telefono" id="telefono" required />
+        </div>
+        <div class="field">
+          <label for="correo">Email</label>
+          <input type="email" name="correo" id="correo" required />
+        </div>
+        <div class="field">
+          <label for="numero_licencia">Número de licencia</label>
+          <input type="text" name="numero_licencia" id="numero_licencia" required />
+        </div>
+        <div class="btns">
+          <button type="reset" class="btn btn-ghost">Cancelar</button>
+          <button type="submit" class="btn-submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="confirm-modal" class="modal close">
+      <div class="content">
+        <h4>¿Desea borrar el registro?</h4>
+        <div>
+          <button id="cancelar-modal-btn" class="btn btn-ghost">Cancelar</button>
+          <button id="confirmar-modal-btn" class="btn btn-delete">Borrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="msg-content" class="msg hidden">
+      <p></p>
+    </div>
+
+    <script src="js/components/base_components.js"></script>
+    <script src="js/components/clientes_components.js"></script>
+    <script src="js/services/base_services.js"></script>
+    <script src="js/services/clientes_services.js"></script>
+    <script src="js/clientes.js"></script>
+  </body>
+</html>

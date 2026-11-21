@@ -3,68 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Estudiantes</title>
-    <link rel="stylesheet" href="css/forms.css">
-    <link rel="stylesheet" href="css/modals.css">
-    <link rel="stylesheet" href="css/msg.css">
+    <title>Retravehiculos</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-    <h1>Lista de estudiantes</h1>
-    <br />
-    <button id="registro-btn">Registrar estudiante</button>
-    <br />
-    <table id="estudiantes-table">
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Codigo</th>
-          <th>Nombre</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="4">No hay datos registrados...</td>
-        </tr>
-      </tbody>
-    </table>
-    <div id="student-form-content" class="form-content close">
-      <form name="estudiante-form">
-        <h3>Datos del estudiante</h3>
-        <div>
-          <label for="cod">Codigo:</label>
-          <input type="text" name="cod" />
-        </div>
-        <div>
-          <label for="name">Nombre.</label>
-          <input type="text" name="name" />
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" name="email" />
-        </div>
-        <div class="btns">
-          <button type="reset">Cancelar</button>
-          <button type="submit">Guardar</button>
-        </div>
-      </form>
+  <nav class="menu">
+    <div class="menu-item logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
     </div>
-    <div id="borrar-modal" class="modal close">
-        <div class="content">
-            <h4>¿Desea borrar el registro?</h4>
-            <div>
-                <button id="cancelar-modal-btn">Cancelar</button>
-                <button id="borrar-modal-btn">Borrar</button>
-            </div>
-        </div>
+    <div class="menu-item">
+      <a href="vehiculos.html">
+        Vehículos
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="clientes.html">
+        Clientes
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="reservas.html">
+        Reservas
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="disponibilidad.html">
+        Disponibilidad
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="historial.html">
+        Historial
+      </a>
+    </div>
+  </nav>
+
+  <main class="main-page">
+    <div class="hero">
+      <h1>Tu flota, reservas y devoluciones en un solo lugar</h1>
+      <p>
+        Consulta qué vehículos están libres, registra una reserva en minutos
+        y evita cruces de fechas.
+      </p>
     </div>
 
-    <div id="msg-content" class="msg hidden">
-        <p>Datos guardados!!!</p>
+    <div class="menu-cards">
+      <a id="vehiculos" class="menu-card" href="vehiculos.html">
+        <h2>Administrar Vehículos</h2>
+        <p>Registra la flota con marca, modelo, categoría y estado.</p>
+      </a>
+      <a id="clientes" class="menu-card" href="clientes.html">
+        <h2>Administrar Clientes</h2>
+        <p>Guarda los datos de contacto y la licencia de cada cliente.</p>
+      </a>
+      <a id="reservas" class="menu-card" href="reservas.html">
+        <h2>Crear Reservas</h2>
+        <p>Registra nuevas reservas y gestiona las existentes.</p>
+      </a>
+      <a id="disponibilidad" class="menu-card" href="disponibilidad.html">
+        <h2>Ver Disponibilidad</h2>
+        <p>Consulta la disponibilidad de vehículos en cualquier momento.</p>
+      </a>
+      <a id="historial" class="menu-card" href="historial.html">
+        <h2>Historial de Alquileres</h2>
+        <p>Revisa todos los alquileres de un cliente o de un vehículo.</p>
+      </a>
     </div>
+  </main>
 
-    <script src="js/components/estudiantes_components.js"></script>
-    <script src="js/services/estudiantes_services.js"></script>
-    <script src="js/estudiantes.js"></script>
   </body>
 </html>

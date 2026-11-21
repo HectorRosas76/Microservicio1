@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historial</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/cre_hist.css">
+  </head>
+  <body>
+  <nav class="menu">
+    <div class="menu-item logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="vehiculos.html">
+        Vehículos
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="clientes.html">
+        Clientes
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="reservas.html">
+        Reservas
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="disponibilidad.html">
+        Disponibilidad
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="historial.html">
+        Historial
+      </a>
+    </div>
+  </nav>
+
+    <div class="page-container">
+      <section class="header-section">
+        <h1>Historial de alquileres</h1>
+      </section>
+
+      <section class="filter-panel">
+        <div class="filter-box">
+          <h2>Por cliente</h2>
+          <form name="cliente-form">
+            <div>
+              <label for="cliente_id">Cliente</label>
+              <select name="cliente_id" id="cliente_id" required>
+                <option value="">Seleccionar</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Ver historial</button>
+          </form>
+        </div>
+
+        <div class="filter-box">
+          <h2>Por vehículo</h2>
+          <form name="vehiculo-form">
+            <div>
+              <label for="vehiculo_id">Vehículo</label>
+              <select name="vehiculo_id" id="vehiculo_id" required>
+                <option value="">Seleccionar</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Ver historial</button>
+          </form>
+        </div>
+      </section>
+
+      <div id="historial-aviso" class="alert alert-info">Elige un cliente o un vehículo para consultar su historial de alquileres.</div>
+      <div id="historial-error" class="alert alert-error" hidden></div>
+
+      <section id="historial-panel" class="grid-panel" hidden>
+        <h2 id="historial-titulo">Historial</h2>
+        <div id="historial-grid" class="grid-wrapper"></div>
+      </section>
+    </div>
+
+    <script src="js/components/base_components.js"></script>
+    <script src="js/components/historial_components.js"></script>
+    <script src="js/services/base_services.js"></script>
+    <script src="js/services/clientes_services.js"></script>
+    <script src="js/services/vehiculos_services.js"></script>
+    <script src="js/services/reservas_services.js"></script>
+    <script src="js/historial.js"></script>
+  </body>
+</html>

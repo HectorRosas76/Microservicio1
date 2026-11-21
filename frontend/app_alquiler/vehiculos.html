@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehiculos</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/cre_hist.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/msg.css">
+  </head>
+  <body>
+  <nav class="menu">
+    <div class="menu-item logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="vehiculos.html">
+        Vehículos
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="clientes.html">
+        Clientes
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="reservas.html">
+        Reservas
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="disponibilidad.html">
+        Disponibilidad
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="historial.html">
+        Historial
+      </a>
+    </div>
+  </nav>
+
+    <div class="page-container">
+      <section class="header-section">
+        <h1>Vehículos</h1>
+        <button id="registro-btn" class="btn btn-primary">+ Registrar Vehículo</button>
+      </section>
+
+      <section class="list-controls">
+        <h2>Buscar vehículo</h2>
+        <form name="search-form" class="search-form">
+          <input type="text" name="search" placeholder="Buscar por marca, modelo, año, categoría o estado..." />
+          <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+      </section>
+
+      <section class="grid-panel">
+        <h2>Lista de Vehículos</h2>
+        <div id="vehiculos-grid" class="grid-wrapper">
+          <div class="grid-row cols-7 grid-head">
+          <div class="grid-cell">Código</div>
+          <div class="grid-cell">Marca</div>
+          <div class="grid-cell">Modelo</div>
+          <div class="grid-cell">Año</div>
+          <div class="grid-cell">Categoría</div>
+          <div class="grid-cell">Estado</div>
+          <div class="grid-cell">Acciones</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="vehicle-form-content" class="form-content close">
+      <form name="vehiculo-form">
+        <h3 id="form-title">Registrar</h3>
+        <p class="form-sub">Completa los datos del vehículo.</p>
+        <div class="field">
+          <label for="marca">Marca</label>
+          <input type="text" name="marca" id="marca" required />
+        </div>
+        <div class="field">
+          <label for="modelo">Modelo</label>
+          <input type="text" name="modelo" id="modelo" required />
+        </div>
+        <div class="field">
+          <label for="anio">Año</label>
+          <input type="number" name="anio" id="anio" min="1950" max="2100" required />
+        </div>
+        <div class="field">
+          <label for="categoria">Categoría</label>
+          <input type="text" name="categoria" id="categoria" required />
+        </div>
+        <div class="field">
+          <label for="estado">Estado</label>
+          <select name="estado" id="estado" required>
+            <option value="disponible">Disponible</option>
+            <option value="alquilado">Alquilado</option>
+            <option value="mantenimiento">Mantenimiento</option>
+          </select>
+        </div>
+        <div class="btns">
+          <button type="reset" class="btn btn-ghost">Cancelar</button>
+          <button type="submit" class="btn-submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="confirm-modal" class="modal close">
+      <div class="content">
+        <h4>¿Desea borrar el registro?</h4>
+        <div>
+          <button id="cancelar-modal-btn" class="btn btn-ghost">Cancelar</button>
+          <button id="confirmar-modal-btn" class="btn btn-delete">Borrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="msg-content" class="msg hidden">
+      <p></p>
+    </div>
+
+    <script src="js/components/base_components.js"></script>
+    <script src="js/components/vehiculos_components.js"></script>
+    <script src="js/services/base_services.js"></script>
+    <script src="js/services/vehiculos_services.js"></script>
+    <script src="js/vehiculos.js"></script>
+  </body>
+</html>

@@ -1,46 +1,100 @@
-.form-content{
+.form-content {
     position: fixed;
     top: 0px;
     right: 0px;
-    padding: 16px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 200px;
+    box-sizing: border-box;
+    padding: 30px 28px;
+    width: 360px;
     height: 100vh;
+    overflow-y: auto;
     background-color: #fff;
-    border-left: 1px solid #000;
-    box-shadow: -2px 0px 5px 5px #959292;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: -10px 0px 50px rgba(0, 0, 0, 0.35);
+    z-index: 200;
     transition-property: right;
     transition-duration: 500ms;
     transition-timing-function: linear;
 }
 
-.form-content.close{
-    right: -260px;
+.form-content.close {
+    right: -460px;
 }
 
-.form-content form{
+.form-content form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: flex-start;
-    align-items: flex-start;
     gap: 16px;
 }
 
-.form-content form div{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+.form-content h3 {
+    font-size: 26px;
+    margin: 0px;
+    color: #0f172a;
 }
 
-.form-content form div.btns{
+.form-content .form-sub {
+    margin: -10px 0px 6px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.form-content .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-content label {
+    color: #334155;
+    font-weight: 600;
+}
+
+.form-content input,
+.form-content select {
+    box-sizing: border-box;
     width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    font-size: 0.95rem;
+}
+
+.form-content input:focus,
+.form-content select:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-content form div.btns {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-end;
-    gap: 16px;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.form-content .btn-ghost {
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.form-content .btn-submit {
+    background: #2563eb;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-content .btn-submit:hover {
+    background: #1d4ed8;
 }

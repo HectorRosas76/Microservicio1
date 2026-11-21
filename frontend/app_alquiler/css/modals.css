@@ -4,7 +4,8 @@
   left: 0px;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(15, 23, 42, 0.55);
+  z-index: 300;
 }
 
 .modal.close {
@@ -18,12 +19,11 @@
   align-items: center;
   position: fixed;
   bottom: 40vh;
-  left: calc((100vw - 266px) / 2);
-  width: 250px;
-  padding: 16px;
-  border: 1px solid #dedddd;
-  border-radius: 16px;
-  box-shadow: 0px 0px 5px 5px #dedddd;
+  left: calc((100vw - 340px) / 2);
+  width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.35);
   background-color: #fff;
   transition-property: bottom;
   transition-duration: 250ms;
@@ -32,6 +32,13 @@
 
 .modal.close .content{
     bottom: -40vh;
+}
+
+.modal .content h4 {
+  margin: 0px 0px 16px;
+  font-size: 18px;
+  color: #0f172a;
+  text-align: center;
 }
 
 .modal .content div {

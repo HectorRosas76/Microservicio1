@@ -1,8 +1,6 @@
 <?php
 
 use App\Presentation\Repositories\ClientsRepository;
-// use Psr\Http\Message\ResponseInterface as Response;
-// use Psr\Http\Message\ServerRequestInterface as Request;
 
 use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
