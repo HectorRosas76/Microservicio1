@@ -14,8 +14,6 @@ $cors = require __DIR__ . '/../app/Base/cors.php';
 
 $cors($app);
 
-$app = AppFactory::create();
-
 $app->get('/', function (Request $request, Response $response, $args) {
     $response->getBody()->write("Hello world!");
     return $response;
