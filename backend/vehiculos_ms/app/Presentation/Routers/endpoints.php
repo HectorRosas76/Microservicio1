@@ -15,6 +15,5 @@ return function (App $app) {
         $group->post('', [VehiclesRepository::class, 'create_vehicle']);
         $group->put('/{id}', [VehiclesRepository::class, 'update_vehicle']);
         $group->delete('/{id}', [VehiclesRepository::class, 'delete_vehicle']);
-     $group->patch('/{id}/estado', [VehiclesRepository::class, 'update_vehicle_state']);
-        });
+    });
 };

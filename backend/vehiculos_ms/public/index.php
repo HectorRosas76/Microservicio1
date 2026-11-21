@@ -11,6 +11,7 @@ $app = AppFactory::create();
 $vehicles_endpoints = require __DIR__ . '/../app/Presentation/Routers/endpoints.php';
 
 $cors = require __DIR__ . '/../app/Base/cors.php';
+
 $cors($app);
 
 $app = AppFactory::create();

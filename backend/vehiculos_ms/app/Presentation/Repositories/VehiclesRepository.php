@@ -82,21 +82,4 @@ class VehiclesRepository
             return $resp->withStatus(200);
         }
     }
-
-        function update_vehicle_state(Request $req, Response $resp, $args): Response
-    {
-        $data = json_decode($req->getBody()->getContents(), true) ?? [];
-        $controller = new VehiclesController();
-        try {
-            $row = $controller->set_state((int) $args["id"], $data['estado'] ?? '');
-        } catch (\Exception $e) {
-            $resp->getBody()->write(json_encode(['error' => $e->getMessage()]));
-            return $resp->withStatus(422)->withHeader('Content-Type', 'application/json');
-        }
-        if (empty($row)) {
-            return $resp->withStatus(404);
-        }
-        $resp->getBody()->write($row->toJson());
-        return $resp->withStatus(200)->withHeader('Content-Type', 'application/json');
-    }
 }

@@ -68,14 +68,60 @@ Content-Type: application/json
 DELETE http://127.0.0.1:8061/vehiculos/1
 
 
+////////////////////////////////////////
 
-/////////////////////////////////////////////
+### RESERVAR
 
+### Consultar todas las reservas
+GET http://127.0.0.1:8071/reservas
 
-### (vehiculos_ms) Cambiar solo el estado de un vehículo
-PATCH http://127.0.0.1:8061/vehiculos/1/estado
+### Consultar una reserva
+GET http://127.0.0.1:8071/reservas/1
+
+### Registrar una reserva
+POST http://127.0.0.1:8071/reservas
 Content-Type: application/json
 
 {
-    "estado": "disponible"
+    "cliente_id": 1,
+    "vehiculo_id": 1,
+    "fecha_inicio": "2026-12-01",
+    "fecha_fin": "2026-12-05"
+}
+
+### Modificar una reserva
+PUT http://127.0.0.1:8071/reservas/1
+Content-Type: application/json
+
+{
+    "cliente_id": 1,
+    "vehiculo_id": 1,
+    "fecha_inicio": "2026-12-02",
+    "fecha_fin": "2026-12-07",
+    "estado": "activa"
+}
+
+### Borrar una reserva
+DELETE http://127.0.0.1:8071/reservas/1
+
+### ERROR esperado: fecha_fin antes de fecha_inicio (422)
+POST http://127.0.0.1:8071/reservas
+Content-Type: application/json
+
+{
+    "cliente_id": 1,
+    "vehiculo_id": 1,
+    "fecha_inicio": "2026-12-10",
+    "fecha_fin": "2026-12-05"
+}
+
+### ERROR esperado: reserva que no existe (404)
+PUT http://127.0.0.1:8071/reservas/999
+Content-Type: application/json
+
+{
+    "cliente_id": 1,
+    "vehiculo_id": 1,
+    "fecha_inicio": "2026-12-02",
+    "fecha_fin": "2026-12-07"
 }
