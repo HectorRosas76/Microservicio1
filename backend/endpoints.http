@@ -66,3 +66,16 @@ Content-Type: application/json
 
 ### borrar un vehículo
 DELETE http://127.0.0.1:8061/vehiculos/1
+
+
+
+/////////////////////////////////////////////
+
+
+### (vehiculos_ms) Cambiar solo el estado de un vehículo
+PATCH http://127.0.0.1:8061/vehiculos/1/estado
+Content-Type: application/json
+
+{
+    "estado": "disponible"
+}

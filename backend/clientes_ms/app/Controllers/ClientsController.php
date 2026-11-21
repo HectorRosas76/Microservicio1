@@ -36,6 +36,7 @@ class ClientsController
             throw new Exception("$id no existe", 1);
         }
         $client->nombre = $data['nombre'];
+        $client->telefono = $data['telefono'];
         $client->correo = $data['correo'];
         $client->numero_licencia = $data['numero_licencia'];
         $client->save();

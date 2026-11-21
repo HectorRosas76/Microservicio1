@@ -54,4 +54,20 @@ class VehiclesController
         $vehicle->delete();
         return $vehicle;
     }
+
+        function set_state(int $id, string $estado): Vehiculos|null
+    {
+        $validos = ['disponible', 'alquilado', 'mantenimiento'];
+        if (!in_array($estado, $validos, true)) {
+            throw new Exception("estado invalido, usa: " . implode(', ', $validos), 422);
+        }
+        $vehicle = Vehiculos::find($id);
+        if (empty($vehicle)) {
+            return null;
+        }
+        $vehicle->estado = $estado;
+        $vehicle->save();
+        return $vehicle;
+    }
+
 }
