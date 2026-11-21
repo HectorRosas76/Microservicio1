@@ -8,16 +8,6 @@ use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
 
 return function (App $app) {
-    // $app->get('/clientes', function (Request $request, Response $response, $args) {
-    //     $repository = new ClientsRepository();
-    //     return $repository->get_all_clients($request, $response, $args);
-    // });
-
-    // $app->get('/clientes', [ClientsRepository::class, 'get_all_clients']);
-    // $app->get('/estudiantes/{id}', [StudentsRepository::class, 'get_student']);
-    // $app->post('/estudiantes', [StudentsRepository::class, 'create_student']);
-    // $app->put('/estudiantes/{id}', [StudentsRepository::class, 'update_student']);
-    // $app->delete('/estudiantes/{id}', [StudentsRepository::class, 'delete_student']);
 
     $app->group('/clientes', function (RouteCollectorProxy $group) {
         $group->get('', [ClientsRepository::class, 'get_all_clients']);

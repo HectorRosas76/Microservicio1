@@ -31,3 +31,38 @@ Content-Type: application/json
 
 ### borrar un cliente
 DELETE http://127.0.0.1:8081/clientes/1
+
+//////////////////////////////////////////////////////
+
+### Consultar todos los vehículos
+get http://127.0.0.1:8061/vehiculos
+
+### Consultar un vehículo
+get http://127.0.0.1:8061/vehiculos/1
+
+### registrar un vehículo
+POST http://127.0.0.1:8061/vehiculos
+Content-Type: application/json
+
+{
+    "marca": "Toyota",
+    "modelo": "Camry",
+    "anio": 2020,
+    "categoria": "Escape",
+    "estado": "disponible"
+}
+
+### modificar un vehículo
+PUT http://127.0.0.1:8061/vehiculos/1
+Content-Type: application/json
+
+{
+    "marca": "Toyota",
+    "modelo": "Camry",
+    "anio": 2021,
+    "categoria": "4X4",
+    "estado": "alquilado"
+}
+
+### borrar un vehículo
+DELETE http://127.0.0.1:8061/vehiculos/1

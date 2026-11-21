@@ -1,0 +1,14 @@
+-- Base de datos de vehiculos_ms
+CREATE DATABASE IF NOT EXISTS vehiculos_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE vehiculos_db;
+
+CREATE TABLE IF NOT EXISTS vehiculos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    marca VARCHAR(100) NOT NULL,
+    modelo VARCHAR(100) NOT NULL,
+    anio YEAR NOT NULL,
+    categoria VARCHAR(50),
+    estado ENUM('disponible', 'alquilado', 'mantenimiento') DEFAULT 'disponible',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
